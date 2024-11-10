@@ -35,7 +35,7 @@ public class RahulShettyLocators {
 		driver.findElement(By.cssSelector("input[placeholder='Phone Number']")).sendKeys("8212154654");
 		driver.findElement(By.cssSelector("button[class='reset-pwd-btn']")).click();
 		String password=driver.findElement(By.linkText("Please use temporary password 'rahulshettyacademy' to Login.")).getText();
-		
+		System.out.println(password);
 	}
 
 }
