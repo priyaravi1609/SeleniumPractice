@@ -1,8 +1,12 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class DropDowns {
 
@@ -55,7 +59,24 @@ public class DropDowns {
 		driver.findElement(By.linkText("Chennai (MAA)")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//a[@value='BLR'])[2]")).click();
-		
+		driver.findElement(By.xpath("//input[@placeholder='Type to Select']")).sendKeys("ind");
+		Thread.sleep(3000);
+		List<WebElement> options= driver.findElements(By.xpath("//ul[@id='ui-id-1']/li/a"));
+		for(WebElement s:options) {
+			System.out.println(s.getText());
+			if (s.getText().equalsIgnoreCase("India")){
+				s.click();
+				break;
+				
+			}
+		}
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }
